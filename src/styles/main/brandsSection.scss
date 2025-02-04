@@ -1,0 +1,96 @@
+
+.brands-section{
+    width:100%;
+    padding: 1.5rem 0;
+
+    &__wrapper{
+        width:100%;
+        padding-left:1rem;
+        padding-right:2rem;
+        margin-top:2rem;
+        @media(min-width:768px){
+            padding-right:1rem;
+            .swiper-wrapper{
+                grid-template-columns:repeat(3,minmax(150px,1fr))
+            }
+        }
+
+        @media(min-width:1440px){
+            .swiper-wrapper{
+                grid-template-columns:repeat(4,minmax(150px,1fr))
+            }
+        }
+    }
+
+    &__heading{
+        color:$clr-sub-heading;
+        background:linear-gradient(#F8F8F8 0%,#FFFFFF 40%);
+        line-height:24px;
+        letter-spacing:-0.2px;
+        padding:1.5rem 1rem;
+        font-weight:500;
+        font-size:1rem;
+    }
+
+    &__list{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        gap:20px;
+    }
+
+    &__list-item{
+        background-color:white;
+        padding:1rem 0.5rem;
+
+        & > a{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            & > button{
+                border-radius:50%;
+                width:30px;
+                height:30px;
+                border:1px solid $clr-button-circle;
+            }
+
+            & > img{
+                height:30px;
+            }
+        }
+    }
+
+    &__interaction{
+        height:35px;
+
+        .brands-section__show-more-button{
+            display:none;
+            margin-top:1rem;
+            
+            @media(min-width:768px){
+                display:inline-flex;
+                flex-direction:row;
+                gap:15px;
+            }
+
+            & > img,
+            & > span{
+                transition: all 0.5s ease;
+            }
+        }
+
+        .swiper-pagination{
+            @media(min-width:768px){
+                display:none;
+            }
+        }
+
+        .swiper-pagination-bullet-active{
+            background-color:#B5B6BC;
+        }
+    }
+
+
+
+}
