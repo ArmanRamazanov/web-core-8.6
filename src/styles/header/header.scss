@@ -1,0 +1,133 @@
+
+.flex-inline-container{
+    display:inline-flex;
+    flex-direction:row;
+}
+
+
+.button{
+    background-color:transparent;
+    border:none;
+    
+    &--pink{
+        background-color: $clr-button-circle;
+    }
+
+    &--circle{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+    }
+
+    &:focus{
+        outline-width:2px;
+        outline-color:$clr-green-900;
+    }
+
+    &:active{
+        transform:scale(0.97)
+    }
+
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.activeElement{
+    &:focus{
+        outline-width:2px;
+        outline-color:$clr-green-900;
+    }
+}
+
+li{
+    list-style:none;
+}
+
+.header{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    max-height:100px;
+    padding:1.5rem 1rem;
+    transition:all 0.2s linear;
+
+    &__left-column{
+        gap:20px;
+    }
+
+    &__button{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        border:none;
+    }
+
+    &__interaction-menu-list{
+        gap:10px;
+    }
+
+    &__interaction-menu-list--secondary{
+        display:none;
+    }
+
+    img[alt="Логотип нашей компании"]{
+        margin-top:-0.5rem;
+    }   
+}
+
+@media(min-width:768px) and (max-width:1440px){
+    .header{
+        &__right-column{
+            display:flex;
+            justify-content:row;
+            gap:30px;
+        }
+
+        &__interaction-menu-list--secondary{
+            display:inline-flex;
+            justify-content:row;
+            gap:10px;
+        }
+
+        &__interaction-menu-list{
+            position:relative;
+
+            &:before{
+                content:"";
+                display:block;
+                position:absolute;
+                width:2px;
+                height:32px;
+                background-color:$clr-grey-100;
+                right:6.5rem;
+                top:5px;
+            }
+        }
+
+        &__interaction-menu-list--secondary{
+            &:before{
+                display:none;
+            }
+        }
+        
+        &__left-column{
+            gap:30px;
+            .header__hamburger-button{
+                position:relative;
+                &:after{
+                    content:"";
+                    display:block;
+                    position:absolute;
+                    width:2px;
+                    height:32px;
+                    background-color:$clr-grey-100;
+                    left:3.5rem;
+                    top:5px;
+                }
+            }
+        }
+
+    }
+}

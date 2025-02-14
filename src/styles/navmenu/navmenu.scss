@@ -1,0 +1,111 @@
+
+.navigation-bar{
+    width:100%;
+    max-width:320px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    background-color:white;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:2;
+    translate:-100%; 
+    visibility:hidden;
+    transition: all 0.3s linear;
+
+    &__header{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        padding:1rem;
+
+        div:first-child{
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            gap:10px;
+        }
+
+    }
+
+    .button--pink{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+    }
+
+    &__list{
+        margin-top:15px;
+        display:inline-flex;
+        flex-direction:column;
+        gap:30px;
+
+        .navigation-bar__list-item{
+            padding-left:1rem;
+
+            a{
+                text-decoration:none;
+                color:$clr-black-900;
+
+                &:focus{
+                    outline-color:$clr-green-900;
+                }
+            }
+        }
+
+        .list-item--active{
+            padding-left:calc(1rem - 4px);
+            border-left:3px solid $clr-green-900;
+
+            a{
+                color:$clr-grey-900;
+            }
+        }
+    }
+
+    &__footer{
+        padding:1rem;
+
+        .navigation-bar__interaction{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+
+            .navigation-bar__interaction-buttons{
+                display:flex;
+                flex-direction:row;
+                gap:10px;
+            }
+
+            .navigation-bar__interaction-contacts{
+                display:flex;
+                flex-direction:column;
+                gap:5px;
+
+                p:last-child{
+                    font-weight:600;
+                }
+            }
+
+            div:last-child{
+
+                &:focus{
+                    outline-color:$clr-green-900;
+                };
+                
+                .language--active{
+                    color:$clr-grey-900;
+                }
+            }
+        }
+    }
+}
+
+.navigation-bar.is-active{
+    translate:0;
+    visibility:visible;
+    box-shadow:0.05px 0 15px 0.1px $clr-grey-900;
+}
